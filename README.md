@@ -62,18 +62,22 @@ GET http://localhost:8080/books?genre=fiction
 
 **Example Response:**
 ```json
-[
-  {
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "genre": "fiction"
-  },
-  {
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "genre": "fiction"
-  }
-]
+{
+    "data": [
+        {
+            "title": "Pride and Prejudice",
+            "author": "[]",
+            "edition_number": "4035"
+        },
+        {
+            "title": "Treasure Island",
+            "author": "[]",
+            "edition_number": "1984"
+        }
+    ],
+    "message": "Books retrieved successfully",
+    "status": "success"
+}
 ```
 
 ---
@@ -100,15 +104,17 @@ POST http://localhost:8080/schedule
 **Example Body:**
 ```json
 {
-  "book_id": "12345",
-  "date": "2024-10-05"
+    "user": "Ajeng",
+    "book_title": "Women in Love",
+    "schedule": "2024-10-02T10:00:00Z"
 }
 ```
 
 **Example Response:**
 ```json
 {
-  "message": "Pickup scheduled successfully."
+    "message": "Book pick-up scheduled successfully",
+    "status": "success"
 }
 ```
 
@@ -129,16 +135,16 @@ GET http://localhost:8080/schedules
 
 **Example Response:**
 ```json
-[
-  {
-    "book_id": "12345",
-    "pickup_date": "2024-10-05"
-  },
-  {
-    "book_id": "67890",
-    "pickup_date": "2024-10-10"
-  }
-]
+{
+    "data": [
+        {
+            "book_title": "Women in Love",
+            "pick_up_time": ""
+        }
+    ],
+    "message": "Pick-up schedules retrieved successfully",
+    "status": "success"
+}
 ```
 
 ---
