@@ -91,10 +91,11 @@ GET http://localhost:8080/books?genre=fiction
 **Description:** Schedules a book pickup.
 
 **Request Body:**
-| Name       | Type    | Description                         |
-|------------|---------|-------------------------------------|
-| book_id    | string  | The ID of the book to be picked up  |
-| date       | string  | The date for the pickup (YYYY-MM-DD) |
+| Name       | Type    | Description                          |
+|------------|---------|--------------------------------------|
+| user       | string  | The name of the user scheduling the pickup |
+| book_title | string  | The title of the book to be picked up |
+| schedule   | string  | The date and time for the pickup in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ) |
 
 **Example Request:**
 ```bash
